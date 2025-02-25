@@ -17,17 +17,31 @@ def play_game():
     spaces = generate_wheel()
 
     money = 1000
-    print("you have $" + str(money))
 
-    bet = input("how much do you want to bet?")
-    bet = int(bet)
-    color = input("what color do you want to be on?")
+    while True:
+        print("you have $" + str(money))
 
-    print("the wheel is spinning.....")
-    time.sleep(2)
+        bet = input("how much do you want to bet?")
+        bet = int(bet)
+        color = input("what color do you want to be on?")
 
-    landed = spin_wheel(spaces)
-    print(landed)
+        print("the wheel is spinning.....")
+        time.sleep(2)
+
+        landed = spin_wheel(spaces)
+        
+        print("it landed on " + landed)
+        if color == landed:
+            money = money + bet
+            print("congrats! you now have $" + str(money))
+        else:
+            money = money + bet
+            print("sorry! you now have $" + str(money))
+            
+        play_again = input("do you want to play again?")
+
+        if play_again == "no":
+            break
 
 play_game()
 
