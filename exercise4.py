@@ -26,16 +26,16 @@ def play_game():
             try:
                 bet = int(bet)
                 if bet > money:
-                    print("You can't bet more than the amount of money you have. Please enter a smaller bet.")
-                    bet = input("How much do you want to bet? ")
+                    print("you can't bet more than the amount of money you have. please enter a smaller bet.")
+                    bet = input("how much do you want to bet? ")
                 elif bet <= 0:
-                    print("Bet must be a positive amount. Please enter a valid amount.")
-                    bet = input("How much do you want to bet? ")
+                    print("bet must be a positive amount. please enter a valid amount.")
+                    bet = input("how much do you want to bet? ")
                 else:
                     break
             except ValueError:
-                print("Please enter a valid number for the bet.")
-                bet = input("How much do you want to bet? ")
+                print("please enter a valid number for the bet.")
+                bet = input("how much do you want to bet? ")
         
         color = input("what color do you want to be on?")
 
@@ -49,7 +49,7 @@ def play_game():
             money = money + bet
             print("congrats! you now have $" + str(money))
         else:
-            money = money + bet
+            money = money - bet
             print("sorry! you now have $" + str(money))
             
         play_again = input("do you want to play again?")
