@@ -22,7 +22,21 @@ def play_game():
         print("you have $" + str(money))
 
         bet = input("how much do you want to bet?")
-        bet = int(bet)
+        while True:
+            try:
+                bet = int(bet)
+                if bet > money:
+                    print("You can't bet more than the amount of money you have. Please enter a smaller bet.")
+                    bet = input("How much do you want to bet? ")
+                elif bet <= 0:
+                    print("Bet must be a positive amount. Please enter a valid amount.")
+                    bet = input("How much do you want to bet? ")
+                else:
+                    break
+            except ValueError:
+                print("Please enter a valid number for the bet.")
+                bet = input("How much do you want to bet? ")
+        
         color = input("what color do you want to be on?")
 
         print("the wheel is spinning.....")
